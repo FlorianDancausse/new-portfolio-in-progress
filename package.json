@@ -9,7 +9,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:ci": "ng test --no-watch --no-progress --browsers=ChromeHeadless",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "ng lint",
+    "lint-fix": "ng lint --fix",
+    "prettier": "prettier --write",
+    "prettier:detailled": "prettier --write --log-level warn"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +34,9 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "20.1.1",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
     "husky": "^9.1.7",
     "jasmine-core": "~5.7.0",
     "karma": "~6.4.0",
@@ -37,6 +44,14 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.8.2"
+    "lint-staged": "^16.1.2",
+    "prettier": "3.6.0",
+    "typescript": "~5.8.2",
+    "typescript-eslint": "8.34.1"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,css,scss,sh,html,md,json}": "prettier --write --log-level warn",
+    "**/*.{ts,html}": "eslint --max-warnings=0",
+    "**/*.{css,scss}": "stylelint"
   }
 }
