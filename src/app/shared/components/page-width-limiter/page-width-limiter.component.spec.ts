@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { provideZonelessChangeDetection } from '@angular/core';
 import { PageWidthLimiterComponent } from './page-width-limiter.component';
 
 describe('PageWidthLimiterComponent', () => {
@@ -9,6 +10,7 @@ describe('PageWidthLimiterComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [PageWidthLimiterComponent],
+      providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PageWidthLimiterComponent);
