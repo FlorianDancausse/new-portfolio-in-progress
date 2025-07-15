@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <button
+    matButton
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    florian ~/
+  </button>
+  <div class="spacer"></div>
+  <button matButton routerLink="blog" routerLinkActive="active">/blog</button>
+  <button matButton routerLink="about" routerLinkActive="active">/about</button>
+</mat-toolbar>
